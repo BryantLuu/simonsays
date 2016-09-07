@@ -1,4 +1,4 @@
-$(function() {
+$(function(){
 
   let topLeft     = $('.button--topleft');
   let topRight    = $('.button--topright');
@@ -13,17 +13,20 @@ $(function() {
   let displayScore = $('.score');
   let score        = 0
 
-  function gameInitialize() {
-    console.log('GAME START')
-    addToPattern()
+  allButtons.click(function() {
+    playerMove($(this).data('value'))
+  })
 
-    allButtons.click(function(el) {
-      playerMove($(this).data('value'))
-    })
-  }
+  allButtons.on('mousedown', function() {
+    $(this).addClass('glow');
+  })
+
+  allButtons.on('mouseup', function() {
+    $(this).removeClass('glow');
+  })
 
   function displayPattern() {
-
+    console.log("displayPattern", guesses);
     if(currentPattern[guesses] === topLeft.data('value'))
       topLeft.addClass('glow');
     if(currentPattern[guesses] === topRight.data('value'))
@@ -34,13 +37,12 @@ $(function() {
       bottomRight.addClass('glow');
 
     setTimeout(function () {
+      allButtons.removeClass('glow')
+      guesses++
       if (guesses < currentPattern.length) {
-        allButtons.removeClass('glow')
-        guesses++
         setTimeout(function() {
           displayPattern()
         }, 500)
-
       }
     }, 500)
   }
@@ -75,9 +77,10 @@ $(function() {
       }, 1000)
     } else {
       $('.timer').html('');
-      gameInitialize()
+      addToPattern()
     }
   }
 
   countDown(3)
+
 })

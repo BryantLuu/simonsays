@@ -54,7 +54,7 @@ html, body {
 }
 
 .button--topright {
-  background-color: #ff0f3b;
+  background-color: #ff4265;
   height: 190px;
   width: 190px;
   border-radius: 0 190px 0 0;
@@ -63,7 +63,7 @@ html, body {
 }
 
 .button--topright:hover {
-  border: 5px solid #ff0f3b;
+  border: 5px solid #ff4265;
 }
 
 .button--bottomright {
@@ -80,7 +80,7 @@ html, body {
 }
 
 .button--bottomleft {
-  background-color: yellow;
+  background-color: #f1f69c;
   height: 190px;
   width: 190px;
   border-radius: 0 0 0 190px;
@@ -89,7 +89,7 @@ html, body {
 }
 
 .button--bottomleft:hover {
-  border: 5px solid yellow;
+  border: 5px solid #f1f69c;
 }
 
 .glow {
