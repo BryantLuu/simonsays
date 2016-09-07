@@ -26,7 +26,6 @@ $(function(){
   })
 
   function displayPattern() {
-    console.log("displayPattern", guesses);
     if(currentPattern[guesses] === topLeft.data('value'))
       topLeft.addClass('glow');
     if(currentPattern[guesses] === topRight.data('value'))
@@ -52,7 +51,6 @@ $(function(){
     let color = Math.floor(Math.random() * 4)
     currentPattern.push(color);
     playerGuessQueue = currentPattern.slice()
-    console.log('addcolortopattern')
     displayPattern()
   }
 
