@@ -1,0 +1,103 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: 'white';
+  font-family: 'Century Gothic', sans-serif;
+  color: #444;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.button {
+  display: inline-block;
+  border: 5px solid white;
+}
+
+.outer-ring {
+  height: 400px;
+  width: 400px;
+  border-radius: 200px;
+  background-color: white;
+  position: absolute;
+}
+
+.inner-ring {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  background-color: white;
+  position: absolute;
+  top: 125px;
+  left: 125px;
+}
+
+.button--topleft {
+  background-color: #1aec6e;
+  height: 190px;
+  width: 190px;
+  border-radius: 190px 0 0 0;
+  -moz-border-radius: 190px 0 0 0;
+  -webkit-border-radius: 190px 0 0 0;
+}
+
+.button--topleft:hover {
+  border: 5px solid #1aec6e;
+}
+
+.button--topright {
+  background-color: #ff0f3b;
+  height: 190px;
+  width: 190px;
+  border-radius: 0 190px 0 0;
+  -moz-border-radius: 0 190px 0 0;
+  -webkit-border-radius: 0 190px 0 0;
+}
+
+.button--topright:hover {
+  border: 5px solid #ff0f3b;
+}
+
+.button--bottomright {
+  background-color: #24cdd4;
+  height: 190px;
+  width: 190px;
+  border-radius: 0 0 190px 0;
+  -moz-border-radius: 0 0 190px 0;
+  -webkit-border-radius: 0 0 190px 0;
+}
+
+.button--bottomright:hover {
+  border: 5px solid #24cdd4
+}
+
+.button--bottomleft {
+  background-color: yellow;
+  height: 190px;
+  width: 190px;
+  border-radius: 0 0 0 190px;
+  -moz-border-radius: 0 0 0 190px;
+  -webkit-border-radius: 0 0 0 190px;
+}
+
+.button--bottomleft:hover {
+  border: 5px solid yellow;
+}
+
+.glow {
+  opacity: 0.5;
+}
+
+.timer {
+  position: relative;
+  top: 20%;
+  font-size: 30px;
+}
