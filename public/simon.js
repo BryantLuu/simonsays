@@ -14,6 +14,40 @@ $(function(){
   let score        = 0
   let gameOverDisplay     = $('.game-over');
 
+  let topLeftSound = document.createElement('audio');
+  topLeftSound.setAttribute('src', 'public/sounds/tone1.wav');
+
+  let topRightSound = document.createElement('audio');
+  topRightSound.setAttribute('src', 'public/sounds/tone2.wav');
+
+  let bottomLeftSound = document.createElement('audio');
+  bottomLeftSound.setAttribute('src', 'public/sounds/tone3.wav');
+
+  let bottomRightSound = document.createElement('audio');
+  bottomRightSound.setAttribute('src', 'public/sounds/tone4.wav');
+
+  let gameOverSound = document.createElement('audio');
+  gameOverSound.setAttribute('src', 'public/sounds/game_over.wav')
+
+  let roundEnd = document.createElement('audio');
+  roundEnd.setAttribute('src', 'public/sounds/round_end.wav')
+
+  topLeft.click(function() {
+    topLeftSound.play();
+  })
+
+  topRight.click(function() {
+    topRightSound.play();
+  })
+
+  bottomLeft.click(function() {
+    bottomLeftSound.play();
+  })
+
+  bottomRight.click(function() {
+    bottomRightSound.play();
+  })
+
   allButtons.click(function() {
     playerMove($(this).data('value'))
   })
@@ -61,13 +95,17 @@ $(function(){
     }
 
     if (playerGuessQueue.length === 0) {
+      roundEnd.play()
       score += 100
       displayScore.html(score)
-      addToPattern()
+      setTimeout(function(){
+        addToPattern();
+      }, 500)
     }
   }
 
   function gameOver() {
+    gameOverSound.play()
     reset()
     countDown(3)
     gameOverDisplay.removeClass('hide');
