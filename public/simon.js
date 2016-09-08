@@ -61,14 +61,41 @@ $(function(){
   })
 
   function displayPattern() {
-    if(currentPattern[guesses] === topLeft.data('value'))
-      topLeft.addClass('glow');
-    if(currentPattern[guesses] === topRight.data('value'))
-      topRight.addClass('glow');
-    if(currentPattern[guesses] === bottomLeft.data('value'))
-      bottomLeft.addClass('glow');
-    if(currentPattern[guesses] === bottomRight.data('value'))
-      bottomRight.addClass('glow');
+
+    switch(currentPattern[guesses]) {
+      case topLeft.data('value'):
+        topLeft.addClass('glow');
+        topLeftSound.play();
+        break;
+      case topRight.data('value'):
+        topRight.addClass('glow');
+        topRightSound.play();
+        break;
+      case bottomLeft.data('value'):
+        bottomLeft.addClass('glow');
+        bottomLeftSound.play()
+        break;
+      case bottomRight.data('value'):
+        bottomRight.addClass('glow');
+        bottomRightSound.play()
+        break;
+    }
+    // if(currentPattern[guesses] === topLeft.data('value')){
+    //   topLeft.addClass('glow');
+    // }
+    //
+    // if(currentPattern[guesses] === topRight.data('value')){
+    //   topRight.addClass('glow');
+    // }
+    //
+    // if(currentPattern[guesses] === bottomLeft.data('value')){
+    //   bottomLeft.addClass('glow');
+    // }
+    //
+    // if(currentPattern[guesses] === bottomRight.data('value')){
+    //   bottomRight.addClass('glow');
+    // }
+
 
     setTimeout(function () {
       allButtons.removeClass('glow')
@@ -100,7 +127,7 @@ $(function(){
       displayScore.html(score)
       setTimeout(function(){
         addToPattern();
-      }, 500)
+      }, 750)
     }
   }
 
